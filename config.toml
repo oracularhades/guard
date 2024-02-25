@@ -1,0 +1,87 @@
+[admin.notes_to_self]
+what_is_this_guard_for = ""
+internal_admin_contact = ""
+
+[frontend]
+
+[frontend.metadata]
+logo = "https://github.com/favicon.ico"
+description = "We need to verify your identity, please login"
+image = "https://images.unsplash.com/photo-1593940256067-fb4acd831804?q=80&w=3088&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+
+[frontend.login]
+header = "Login methods"
+description = "Authorization required"
+
+[database]
+type = "mariadb"
+host = "mariadb.internal.motionfans.com"
+port = 9994
+
+[webhooks]
+successful_login = "https://coastguard.internal.motionfans.com/log?type=successful_login"
+failed_login = "https://coastguard.internal.motionfans.com/log?type=failed_login"
+
+[logging]
+proxy_log = "https://coastguard.internal.motionfans.com/log?type=proxy"
+
+[redaction.policy]
+
+[redaction.policy.headers]
+type = "headers"
+fields = ["X-Authorization", "Authorization"]
+redact_start_at = 2
+redact_end_at = -2
+
+[redaction.policy.params]
+type = "params"
+fields = ["code"]
+redact_start_at = 2
+redact_end_at = -2
+
+[redaction.policy.headers]
+type = "body_json"
+fields = ["sessionid"]
+redact_start_at = 2
+redact_end_at = -2
+
+[authentication_methods]
+
+[authentication_methods.mTLS]
+type = "mTLS"
+login_page = "https://login.microsoftonline.com/680e4b74-1b4d-4565-9a12-3a6c94c91a52/oauth2/v2.0/authorize?client_id=84e6fd57-1520-44d4-8a03-abcdd0fd1eaa&response_type=code&direct_uri=https://guard.motionfans.com&response_mode=query&scope=user.read&state=urmum"
+validation_endpoint = "https://auth.api.motionfans.com/guard/microsoft/verify"
+applied_policies = ["staff_only"]
+ratelimit = 5
+ratelimit_cooldown = 10 * 3
+
+[authentication_methods.microsoft]
+type = "custom"
+login_page = "https://login.microsoftonline.com/680e4b74-1b4d-4565-9a12-3a6c94c91a52/oauth2/v2.0/authorize?client_id=84e6fd57-1520-44d4-8a03-abcdd0fd1eaa&response_type=code&direct_uri=https://guard.motionfans.com&response_mode=query&scope=user.read&state=urmum"
+validation_endpoint = "https://auth.api.motionfans.com/guard/microsoft/verify"
+applied_policies = ["staff_only"]
+ratelimit = 5
+ratelimit_cooldown = 10 * 3
+
+[policies]
+
+[policies.staff_only]
+action = "allow"
+property = "email"
+ends_with = "@motionfans.com"
+
+[policies.ip_country_code_allowlist]
+action = "reject_with_message"
+message = "Your country-code is invalid"
+property = "ip_country_code"
+not = ["NZ"]
+
+[guarded_hostnames.defaults]
+failed_login_redirect = "@/failed-login"
+
+[guarded_hostnames.hostname]
+hostname = "example.motionfans.com"
+authentication_methods = ["mTLS", "microsoft"]
+require_all_authentication_methods = false
+applied_policies = ["staff_only"]
+successful_login_redirect=""
