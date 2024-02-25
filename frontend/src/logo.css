@@ -1,0 +1,61 @@
+.motionlogo {
+    position: relative;
+    justify-self: center;
+    padding-right: 1px;
+}
+
+.motionlogoh1 {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.motionlogoanimation {
+    background: repeating-linear-gradient(to right, #009ce5, #ff00f2);
+    background-clip: text;
+    animation: textShine 6s linear infinite;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+}
+
+.motionlogoPride {
+    background: repeating-linear-gradient(to right, #e50000, #ff8d00, #FFEE00, #028121, #004cff, #770088);
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    font-size: 26px;
+    background-size: 200% auto;
+    animation: textShine 6s linear infinite;
+    font-weight: bold;
+}
+
+.motionlogoGreyed {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+    font-size: 26px;
+    color: grey;
+    font-weight: bold;
+}
+
+.motionlogoBackgroundClip {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* .motionlogo:hover {
+    filter: brightness(1.2);
+} */
+
+@keyframes textShine {
+    to {
+      background-position: 200%;
+    }
+}
+
+.mfns_beta_txt {
+    /* color: rgb(121, 57, 185); */
+    font-weight: bold;
+    font-size: 11px;
+    margin-left: -22px;
+    margin-top: 11px;
+}

@@ -1,0 +1,38 @@
+.FormStyle_1 {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    /* height: 400px; */
+    padding: 15px;
+    /* padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 12px; */
+    row-gap: 12px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 4px;
+}
+
+.FormStyle_1_header {
+    font-size: 24px;
+}
+
+.FormStyle_1_logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.FormStyle_1_logo img {
+    max-width: 120px;
+}
+
+.FormStyle_1_div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 8px;
+}
+
+.FormStyle_1_div_login_button {
+    margin-top: 4px;
+}

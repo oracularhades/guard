@@ -1,0 +1,30 @@
+.profile_pic {
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 0px;
+    box-shadow: none;
+}
+
+.profile_pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.online_indicator {
+    z-index: 2;
+    min-width: 8px;
+    min-height: 8px;
+    max-width: 8px;
+    max-height: 8px;
+    border-radius: 8px;
+    background-color: rgb(18, 211, 18);
+    /* background-color: rgb(243, 136, 14); */
+    border: black 0.5px solid;
+    margin-top: -10px;
+    margin-right: 0px;
+    align-self: flex-end;
+}

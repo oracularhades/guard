@@ -1,0 +1,19 @@
+.switcher {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    box-shadow: unset;
+    background-color: transparent;
+    padding: 4px;
+    padding-left: 0px;
+}
+
+.switcher_hoverframe .hoverframetext {
+    min-width: 250px;
+}
+
+.switcher_hoverframe .hoverframetext {
+    padding-left: 5px;
+    padding-right: 5px;
+}

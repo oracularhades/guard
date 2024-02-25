@@ -1,0 +1,13 @@
+.Sidebarbutton {
+    /* Remember, this is just the <a> tag, go down to the ".Sidebarbutton button" :) */
+    text-decoration: none;
+}
+
+.Sidebarbutton button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    column-gap: 2px;
+}

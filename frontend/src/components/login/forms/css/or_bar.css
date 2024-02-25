@@ -1,0 +1,12 @@
+.Or_bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Or_bar_or_txt {
+    padding-left: 6px;
+    padding-right: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}

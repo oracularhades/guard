@@ -1,0 +1,10 @@
+.home1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.home1_children {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}

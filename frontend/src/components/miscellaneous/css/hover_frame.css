@@ -1,0 +1,19 @@
+.hoverframe {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+}
+
+.hoverframe .hoverframetext {
+    background-color: white;
+    text-align: center;
+    width: max-content;
+    padding: 5px 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-weight: bold;
+    font-size: 12px;
+   
+    position: absolute;
+    z-index: 1;
+}
